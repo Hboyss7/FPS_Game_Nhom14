@@ -1,0 +1,274 @@
+# 🎮 HƯỚNG DẪN MỞ DỰ ÁN UNITY - FPS GAME NHÓM 14
+
+## 📋 Thông tin dự án
+- **Tên dự án:** CuoiKy_GameNC_FPS_Nhom14
+- **Engine:** Unity 6 (phiên bản 6000.0.26f1)
+- **Repository:** FPS_Game_Nhom14
+- **Branch:** main
+
+---
+
+## ⚠️ QUAN TRỌNG
+Vì dự án này sử dụng **Unity 6 (phiên bản 6000.0.26f1)**, việc đồng bộ phiên bản là **CỰC KỲ QUAN TRỌNG**. Nếu sử dụng sai phiên bản, dự án sẽ bị lỗi "Missing Script" hoặc "Mất hình".
+
+---
+
+## 🛑 BƯỚC 1: Kiểm tra "Đồ nghề" (Git & Git LFS)
+
+Trước khi tải bất cứ thứ gì, bạn cần mở **Terminal** (trên Mac) hoặc **CMD / PowerShell** (trên Windows) và gõ 2 lệnh kiểm tra sau.
+
+### 1. Kiểm tra Git:
+
+```bash
+git --version
+```
+
+- ✅ **Ổn:** Nếu nó hiện ra dòng chữ kiểu `git version 2.43.0...` (số nào cũng được).
+- ❌ **Chưa ổn:** Nếu máy báo lỗi "command not found" hoặc "is not recognized".
+  - **→ Phải tải và cài Git** tại [git-scm.com](https://git-scm.com/)
+
+### 2. Kiểm tra Git LFS (Quan trọng cho Game):
+
+```bash
+git lfs --version
+```
+
+- ✅ **Ổn:** Nếu nó hiện ra kiểu `git-lfs/3.4.0...`
+- ❌ **Chưa ổn:** Nếu báo lỗi.
+  - **→ Phải tải và cài Git LFS** tại [git-lfs.com](https://git-lfs.com/)
+
+---
+
+## ⚙️ BƯỚC 2: Kích hoạt LFS và Clone dự án
+
+Sau khi đã cài đủ đồ nghề, hãy mở Terminal/PowerShell tại thư mục muốn lưu game và làm đúng thứ tự:
+
+### 1. Kích hoạt LFS (Chỉ cần làm 1 lần duy nhất trên máy):
+
+```bash
+git lfs install
+```
+
+**(Bắt buộc phải thấy dòng chữ "Git LFS initialized" thì mới được đi tiếp).**
+
+### 2. Tải dự án về:
+
+```bash
+git clone https://github.com/Hboyss7/FPS_Game_Nhom14.git
+```
+
+**Lưu ý:** Lúc này màn hình sẽ chạy 2 lần:
+- **Lần 1:** Tải code (nhanh)
+- **Lần 2:** Tải LFS files - ảnh, model, audio... (sẽ lâu hơn)
+
+### 3. Di chuyển vào thư mục dự án:
+
+```bash
+cd FPS_Game_Nhom14
+```
+
+---
+
+## 🎮 BƯỚC 3: Cài đặt đúng phiên bản Unity 6
+
+Vì dự án đang dùng bản **`6000.0.26f1`**, bạn **BẮT BUỘC** phải cài đúng bản đó.
+
+### Cách cài đặt:
+
+1. Mở **Unity Hub**
+2. Vào tab **Installs** → **Install Editor**
+3. Tìm đúng phiên bản **6000.0.26f1**
+   - **Mẹo:** Nếu không tìm thấy trong danh sách Official, hãy vào tab **Archive** (Kho lưu trữ) trên trang web Unity để tải đúng bản đó về thông qua Unity Hub.
+   - Link Archive: [https://unity.com/releases/editor/archive](https://unity.com/releases/editor/archive)
+
+4. **Modules cần cài thêm (khuyến nghị):**
+   - ✅ Visual Studio (hoặc VS Code)
+   - ✅ Windows Build Support (nếu build cho Windows)
+   - ✅ Documentation
+
+### ⚠️ LƯU Ý QUAN TRỌNG VỀ PHIÊN BẢN:
+
+- **Nếu bạn đã có phiên bản Unity 6 khác** (ví dụ: 6000.0.20f1, 6000.0.30f1...):
+  - ✅ **Cứ thử chạy phiên bản của bạn trước**
+  - ⚠️ **Nếu gặp lỗi** (Missing Script, compile error, hoặc bất kỳ lỗi nào):
+    - 📞 **Hãy liên lạc với team leader ngay**
+    - 💾 **Hoặc tải về đúng phiên bản 6000.0.26f1**
+
+- **Phiên bản Unity 6 khác nhau có thể tương thích**, nhưng để đảm bảo:
+  - 🎯 **Khuyến nghị cao:** Dùng đúng phiên bản **6000.0.26f1**
+  - 🔄 **Có thể chấp nhận:** Các phiên bản Unity 6 khác (6000.0.x) - **NẾU KHÔNG BỊ LỖI**
+
+⚠️ **CẢNH BÁO:** Nếu dùng sai bản (ví dụ dùng Unity 2022 để mở Unity 6), dự án sẽ bị lỗi script nghiêm trọng.
+
+---
+
+## ⏳ BƯỚC 4: Mở dự án và Kiên nhẫn
+
+### 1. Thêm dự án vào Unity Hub:
+
+- Trong Unity Hub, chọn **Open** (hoặc **Add Project from Disk**)
+- Trỏ vào thư mục vừa clone về: `FPS_Game_Nhom14`
+
+### 2. Chờ đợi quá trình import:
+
+**CẢNH BÁO QUAN TRỌNG:**
+- ⏰ Khi mở lần đầu, Unity sẽ thấy thiếu thư mục `Library`
+- 📦 Nó sẽ hiện bảng **"Resolving Packages"** hoặc **"Importing Assets"**
+- ⏱️ Quá trình này mất từ **10 - 30 phút** (tùy cấu hình máy)
+- 💻 Máy tính có thể bị đơ nhẹ
+- 🚫 **TUYỆT ĐỐI KHÔNG TẮT NGANG**. Hãy để nó chạy xong.
+
+### 3. Dấu hiệu import thành công:
+
+- Console không còn báo lỗi đỏ (hoặc chỉ có warning màu vàng nhẹ)
+- Thư mục `Library` đã được tạo ra
+- Project panel hiển thị đầy đủ assets
+
+---
+
+## 🛠️ BƯỚC 5: Xử lý nếu vào game bị "trắng trơn"
+
+Sau khi mở lên được, nếu bạn thấy màn hình trống không:
+
+1. Nhìn xuống khung **Project** bên dưới
+2. Vào thư mục **Assets** → **Scenes**
+3. Nhấp đúp (Double click) vào file Scene chính:
+   - Tìm các scene có tên như `MainScene`, `Level1`, `GameScene`...
+4. Game sẽ hiện ra đầy đủ
+
+---
+
+## 🔍 KIỂM TRA CÁC VẤN ĐỀ THƯỜNG GẶP
+
+### ❌ Vấn đề 1: "Missing Script" (Thiếu script) hoặc Lỗi Compile
+
+**Nguyên nhân:** Sử dụng sai phiên bản Unity
+
+**Giải pháp:**
+
+**Bước 1 - Thử với phiên bản hiện tại:**
+- Nếu bạn đang dùng Unity 6 (bất kỳ phiên bản 6000.0.x nào), hãy thử mở dự án
+- Đợi Unity import xong hoàn toàn
+
+**Bước 2 - Nếu vẫn bị lỗi:**
+1. 📞 **Liên lạc ngay với team leader** để báo cáo lỗi
+2. 💾 **Tải và cài đúng phiên bản 6000.0.26f1** (khuyến nghị cao)
+3. Xóa thư mục `Library` và `Temp` trong thư mục dự án
+4. Mở lại dự án bằng phiên bản **6000.0.26f1**
+
+**Bước 3 - Nếu vẫn chưa được:**
+```bash
+# Di chuyển vào thư mục dự án
+cd "d:\Lap Trinh Game Nang Cao\CuoiKy_GameNC_FPS_Nhom14"
+
+# Xóa thư mục Library và Temp (PowerShell)
+Remove-Item -Recurse -Force Library, Temp
+
+# Mở lại Unity Hub và mở dự án
+```
+
+### ❌ Vấn đề 2: Mất hình/texture trắng
+
+**Nguyên nhân:** Git LFS không tải đầy đủ file
+
+**Giải pháp:**
+```bash
+git lfs pull
+```
+
+### ❌ Vấn đề 3: Compile Error
+
+**Nguyên nhân:** Packages chưa được resolve đầy đủ
+
+**Giải pháp:**
+1. Vào **Window** → **Package Manager**
+2. Chờ tất cả packages tải xong
+3. Nếu có package báo lỗi, click **Resolve** hoặc **Update**
+
+### ❌ Vấn đề 4: Scene rỗng
+
+**Giải pháp:**
+- Double-click vào scene file trong `Assets/Scenes/`
+
+---
+
+## 📁 CẤU TRÚC DỰ ÁN
+
+```
+CuoiKy_GameNC_FPS_Nhom14/
+├── Assets/                    # Tất cả tài nguyên game
+│   ├── Scenes/               # Các scene của game
+│   ├── Scripts/              # Code C#
+│   ├── Prefabs/              # Prefabs
+│   ├── Materials/            # Vật liệu
+│   ├── Models/               # 3D Models
+│   ├── Animations/           # Animations
+│   ├── Sounds/               # Audio files
+│   └── ...
+├── ProjectSettings/          # Cài đặt dự án
+├── Packages/                 # Package dependencies
+└── Library/                  # (Tự động tạo - KHÔNG commit)
+```
+
+---
+
+## 🚀 BẮT ĐẦU LÀM VIỆC
+
+Sau khi mở dự án thành công:
+
+1. **Chọn scene chính** trong `Assets/Scenes/`
+2. **Nhấn Play** (▶️) để test game
+3. **Bắt đầu code/chỉnh sửa**
+
+---
+
+## 💡 MẸO HỮU ÍCH
+
+### Trước khi làm việc mỗi ngày:
+```bash
+git pull
+git lfs pull
+```
+
+### Sau khi làm việc:
+```bash
+git add .
+git commit -m "Mô tả thay đổi của bạn"
+git push
+```
+
+### Tránh conflict:
+- Luôn `git pull` trước khi bắt đầu làm việc
+- Không chỉnh sửa cùng lúc trên cùng một file với thành viên khác
+- Thường xuyên commit và push code
+
+---
+
+## 📞 HỖ TRỢ
+
+Nếu gặp vấn đề không giải quyết được:
+
+1. Kiểm tra lại từng bước trong hướng dẫn này
+2. Xem Console trong Unity để biết lỗi cụ thể
+3. Liên hệ với team leader
+4. Tham khảo Unity Documentation: [docs.unity3d.com](https://docs.unity3d.com/)
+
+---
+
+## ✅ CHECKLIST TRƯỚC KHI BẮT ĐẦU
+
+- [ ] Đã cài Git
+- [ ] Đã cài Git LFS
+- [ ] Đã chạy `git lfs install`
+- [ ] Đã clone dự án thành công
+- [ ] Đã cài Unity 6 phiên bản **6000.0.26f1**
+- [ ] Đã mở được dự án trong Unity
+- [ ] Đã load được scene chính
+- [ ] Không có lỗi "Missing Script"
+- [ ] Các texture/model hiển thị bình thường
+
+---
+
+**Chúc bạn làm việc hiệu quả! 🎮✨**
+
+*Tài liệu được tạo ngày: 22/11/2025*
