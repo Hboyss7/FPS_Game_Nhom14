@@ -8,8 +8,29 @@
 
 ---
 
-## ⚠️ QUAN TRỌNG
-Vì dự án này sử dụng **Unity 6 (phiên bản 6000.0.26f1)**, việc đồng bộ phiên bản là **CỰC KỲ QUAN TRỌNG**. Nếu sử dụng sai phiên bản, dự án sẽ bị lỗi "Missing Script" hoặc "Mất hình".
+## ⚠️ QUAN TRỌNG VỀ PHIÊN BẢN UNITY
+
+Dự án này được tạo bằng **Unity 6 (phiên bản 6000.0.26f1)**.
+
+### 📌 Quy trình đơn giản:
+
+1. **Nếu bạn đã có Unity 2022 (ví dụ: 2022.3.61f1):**
+   - ✅ **Cứ thử mở dự án bằng Unity 2022 trước**
+   - ⚠️ **Nếu gặp lỗi** (Missing Script, compile error, không mở được...):
+     - 💬 **Liên hệ ngay với team leader** để được hỗ trợ
+     - 💾 **HOẶC cài thêm Unity 6000.0.26f1** (xem hướng dẫn BƯỚC 3 bên dưới)
+
+2. **Nếu bạn chưa có Unity nào:**
+   - 🎯 **Khuyến nghị:** Cài luôn **Unity 6000.0.26f1** (phiên bản chính thức của dự án)
+
+3. **Nếu bạn đã có Unity 6 (6000.0.x):**
+   - ✅ **Rất tốt!** Cứ thử mở dự án
+   - ⚠️ Nếu bị lỗi → Cài đúng phiên bản **6000.0.26f1**
+
+### 💡 Lưu ý:
+- Dự án Unity 6 **có thể** mở được bằng Unity 2022, nhưng **KHÔNG ĐƯỢC ĐẢM BẢO**
+- Nếu sử dụng sai phiên bản, có thể gặp lỗi "Missing Script" hoặc "Mất hình"
+- **An toàn nhất:** Dùng đúng Unity 6000.0.26f1
 
 ---
 
@@ -71,34 +92,84 @@ cd FPS_Game_Nhom14
 
 ## 🎮 BƯỚC 3: Cài đặt đúng phiên bản Unity 6
 
-Vì dự án đang dùng bản **`6000.0.26f1`**, bạn **BẮT BUỘC** phải cài đúng bản đó.
+Vì dự án đang dùng bản **`6000.0.26f1`**, để đảm bảo không có lỗi, khuyến nghị cài đúng phiên bản này.
+
+### ⏱️ Thông tin cài đặt Unity 6000.0.26f1:
+
+- 💾 **Dung lượng tải về:** ~3.5 - 4 GB (tùy modules)
+- 📦 **Dung lượng sau khi cài:** ~8 - 10 GB
+- ⏰ **Thời gian tải:** 15 - 45 phút (tùy tốc độ mạng)
+- ⚙️ **Thời gian cài đặt:** 10 - 20 phút
+- 🔧 **Tổng thời gian:** Khoảng **30 - 60 phút**
 
 ### Cách cài đặt:
 
 1. Mở **Unity Hub**
 2. Vào tab **Installs** → **Install Editor**
-3. Tìm đúng phiên bản **6000.0.26f1**
-   - **Mẹo:** Nếu không tìm thấy trong danh sách Official, hãy vào tab **Archive** (Kho lưu trữ) trên trang web Unity để tải đúng bản đó về thông qua Unity Hub.
-   - Link Archive: [https://unity.com/releases/editor/archive](https://unity.com/releases/editor/archive)
 
 4. **Modules cần cài thêm (khuyến nghị):**
-   - ✅ Visual Studio (hoặc VS Code)
-   - ✅ Windows Build Support (nếu build cho Windows)
-   - ✅ Documentation
+   - ✅ **Visual Studio** (hoặc VS Code) - ~5 GB
+   - ✅ **Windows Build Support** (nếu build cho Windows) - ~500 MB
+   - ✅ **Documentation** - ~200 MB
+   
+   *(Nếu chọn đủ modules, tổng dung lượng có thể lên tới ~15 GB)*
 
-### ⚠️ LƯU Ý QUAN TRỌNG VỀ PHIÊN BẢN:
+### 📝 Lưu ý về phiên bản:
 
-- **Nếu bạn đã có phiên bản Unity 6 khác** (ví dụ: 6000.0.20f1, 6000.0.30f1...):
-  - ✅ **Cứ thử chạy phiên bản của bạn trước**
-  - ⚠️ **Nếu gặp lỗi** (Missing Script, compile error, hoặc bất kỳ lỗi nào):
-    - 📞 **Hãy liên lạc với team leader ngay**
-    - 💾 **Hoặc tải về đúng phiên bản 6000.0.26f1**
+### 📝 Lưu ý về phiên bản:
 
-- **Phiên bản Unity 6 khác nhau có thể tương thích**, nhưng để đảm bảo:
-  - 🎯 **Khuyến nghị cao:** Dùng đúng phiên bản **6000.0.26f1**
-  - 🔄 **Có thể chấp nhận:** Các phiên bản Unity 6 khác (6000.0.x) - **NẾU KHÔNG BỊ LỖI**
+#### � LINH HOẠT: Thử Unity 2022 trước
 
-⚠️ **CẢNH BÁO:** Nếu dùng sai bản (ví dụ dùng Unity 2022 để mở Unity 6), dự án sẽ bị lỗi script nghiêm trọng.
+**Nếu bạn đã có Unity 2022 (ví dụ: 2022.3.61f1):**
+1. ✅ **Cứ thử mở dự án bằng Unity 2022 trước**
+2. ⏳ Đợi Unity import xong (10-30 phút)
+3. 🧪 Kiểm tra xem có lỗi không:
+   - ✅ **Nếu mở được, không có lỗi** → Tuyệt vời! Cứ dùng Unity 2022
+   - ❌ **Nếu có lỗi** (Missing Script, compile error...):
+     - 📞 **Liên hệ ngay team leader** để được tư vấn
+     - 💾 **HOẶC cài Unity 6000.0.26f1** (theo hướng dẫn phía trên)
+
+#### ⚠️ Những phiên bản KHÔNG nên dùng:
+
+- ❌ **Unity 2021.x** → Rủi ro cao
+- ❌ **Unity 2020.x** → Rủi ro cao
+
+**Tại sao có thể thử Unity 2022?**
+- Unity 2022 và Unity 6 có một số tính năng tương thích
+- **NHƯNG** không được đảm bảo 100%
+- Có thể gặp lỗi API, Missing Script, hoặc các vấn đề khác
+- **An toàn nhất:** Vẫn là dùng Unity 6000.0.26f1
+
+#### ✅ PHIÊN BẢN ĐƯỢC KHUYẾN NGHỊ:
+
+**Ưu tiên cao nhất:**
+- 🎯 **Unity 6000.0.26f1** (Phiên bản chính thức - Đảm bảo 100%)
+
+**Có thể thử (Nếu đã có sẵn):**
+- 🔄 **Unity 2022.3.x** (Thử xem có lỗi không)
+- 🔄 **Unity 6000.0.x** (Các bản Unity 6 khác)
+
+#### 📥 Nếu quyết định cài Unity 6:
+
+**Lợi ích:**
+- ✅ Không có lỗi phiên bản
+- ✅ Tương thích 100% với dự án
+- ✅ Nhận được tất cả tính năng mới của Unity 6
+- ✅ Không phải lo lắng về Missing Script
+
+**Chi phí:**
+- 💾 Cần ~10-15 GB dung lượng ổ cứng
+- ⏰ Mất ~30-60 phút để tải và cài
+- 🔧 Có thể cùng tồn tại với Unity 2022 (không cần xóa)
+
+#### 🚀 Quyết định nhanh:
+
+| Tình huống | Khuyến nghị |
+|------------|-------------|
+| Chưa có Unity nào | Cài **Unity 6000.0.26f1** |
+| Đã có Unity 2022 | **Thử Unity 2022 trước** → Nếu lỗi → Cài Unity 6 |
+| Đã có Unity 6.x | **Cứ dùng** → Nếu lỗi → Cài 6000.0.26f1 |
+| Đã có Unity 2021 | Cài thêm **Unity 6000.0.26f1** |
 
 ---
 
@@ -142,9 +213,63 @@ Sau khi mở lên được, nếu bạn thấy màn hình trống không:
 
 ### ❌ Vấn đề 1: "Missing Script" (Thiếu script) hoặc Lỗi Compile
 
-**Nguyên nhân:** Sử dụng sai phiên bản Unity
+**Nguyên nhân phổ biến nhất:** Sử dụng phiên bản Unity không tương thích
 
-**Giải pháp:**
+#### 🚨 KIỂM TRA NGAY PHIÊN BẢN UNITY:
+
+**Bước 0 - Xác định phiên bản đang dùng:**
+1. Mở Unity Hub
+2. Nhìn vào tab **Installs**
+3. Kiểm tra phiên bản Unity bạn đã dùng để mở dự án
+
+**Nếu bạn thấy số phiên bản là:**
+- ✅ **6000.0.26f1** → **HOÀN HẢO!** (Nếu vẫn lỗi, xem Trường hợp 3 bên dưới)
+- ⚠️ **6000.0.x** (khác 26f1) → **Có thể dùng** (Nếu lỗi, đổi sang 26f1)
+- 🔄 **2022.3.x** → **Thử được** (Nếu lỗi, cài Unity 6)
+- ❌ **2021.x.x** hoặc **2020.x.x** → **Rủi ro cao** (Nên cài Unity 6)
+
+#### 📌 GIẢI PHÁP CHO TỪNG TRƯỜNG HỢP:
+
+**Trường hợp 1: Đang dùng Unity 2022**
+
+**Bước 1 - Đã thử chưa?**
+- Nếu bạn **MỚI clone dự án** và **CHƯA MỞ LẦN NÀO**:
+  1. ✅ Cứ thử mở bằng Unity 2022 trước
+  2. ⏳ Đợi import xong (10-30 phút)
+  3. 🧪 Kiểm tra Console xem có lỗi đỏ không
+
+**Bước 2 - Nếu thấy lỗi:**
+```
+❌ Unity 2022 không tương thích 100% với dự án Unity 6
+```
+
+**Phải làm:**
+1. 📞 **Liên hệ team leader** để được tư vấn
+2. 💾 **HOẶC cài Unity 6000.0.26f1** (khuyến nghị):
+   - Mở Unity Hub → **Installs** → **Install Editor**
+   - Tìm phiên bản **6000.0.26f1** trong Archive
+   - Link: https://unity.com/releases/editor/archive
+   - Thời gian: ~30-60 phút
+   - Dung lượng: ~10-15 GB
+   
+3. 🔄 **Xóa thư mục bị hỏng:**
+   ```powershell
+   # Di chuyển vào thư mục dự án
+   cd "đường_dẫn_đến_dự_án\FPS_Game_Nhom14"
+   
+   # Xóa thư mục Library và Temp
+   Remove-Item -Recurse -Force Library, Temp
+   ```
+4. ✅ **Mở lại dự án bằng Unity 6000.0.26f1**
+
+**Trường hợp 2: Đang dùng Unity 2021/2020**
+
+**Không nên thử, cài luôn Unity 6:**
+1. 💾 Tải và cài **Unity 6000.0.26f1**
+2. 🔄 Xóa thư mục `Library` và `Temp` (nếu đã từng mở)
+3. ✅ Mở dự án bằng Unity 6
+
+**Trường hợp 3: Đang dùng Unity 6 (6000.0.x) nhưng không phải 26f1**
 
 **Bước 1 - Thử với phiên bản hiện tại:**
 - Nếu bạn đang dùng Unity 6 (bất kỳ phiên bản 6000.0.x nào), hãy thử mở dự án
@@ -156,8 +281,10 @@ Sau khi mở lên được, nếu bạn thấy màn hình trống không:
 3. Xóa thư mục `Library` và `Temp` trong thư mục dự án
 4. Mở lại dự án bằng phiên bản **6000.0.26f1**
 
-**Bước 3 - Nếu vẫn chưa được:**
-```bash
+**Trường hợp 4: Đã dùng đúng Unity 6000.0.26f1 nhưng vẫn lỗi**
+
+**Bước 1 - Reset lại dự án:**
+```powershell
 # Di chuyển vào thư mục dự án
 cd "d:\Lap Trinh Game Nang Cao\CuoiKy_GameNC_FPS_Nhom14"
 
@@ -166,6 +293,13 @@ Remove-Item -Recurse -Force Library, Temp
 
 # Mở lại Unity Hub và mở dự án
 ```
+
+**Bước 2 - Kiểm tra Git LFS:**
+```bash
+git lfs pull
+```
+
+**Bước 3 - Liên hệ team leader** nếu vẫn không được
 
 ### ❌ Vấn đề 2: Mất hình/texture trắng
 
