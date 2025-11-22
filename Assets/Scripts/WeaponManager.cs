@@ -14,7 +14,15 @@ public class WeaponManager : MonoBehaviour
 
     [Header("Ammo")]
     public int totalRifleAmmo = 0;
-    public int totalPistolAmmo = 0; 
+    public int totalPistolAmmo = 0;
+
+    [Header("Throwables")]
+    public int grenades = 0;
+    public float throwForce = 10f;
+    public GameObject grenadePrefab;
+    public GameObject throwableSpawn;
+    public float forceMultiplier = 0;
+    public float forceMultiplierLimit = 2f;
 
     private void Awake()
     {
@@ -47,6 +55,7 @@ public class WeaponManager : MonoBehaviour
             }    
         }
 
+        // Slot
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchActiveSlot(0);
@@ -56,6 +65,42 @@ public class WeaponManager : MonoBehaviour
         {
             SwitchActiveSlot(1);
         }
+
+        // Throwable
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            forceMultiplier += Time.deltaTime;
+            if (forceMultiplier > forceMultiplierLimit)
+            {
+                forceMultiplier = forceMultiplierLimit;
+            }    
+        }
+
+        if (Input.GetKeyUp(KeyCode.G))
+        {
+            if (grenades > 0)
+            {
+                ThrowLegal();
+            }
+            forceMultiplier = 0;
+        }
+
+        
+    }
+
+    private void ThrowLegal()
+    {
+        GameObject lethalPrefab = grenadePrefab;
+        GameObject throwable = Instantiate(lethalPrefab, throwableSpawn.transform.position, Camera.main.transform.rotation);
+        Rigidbody rb = throwable.GetComponent<Rigidbody>();
+
+        rb.AddForce(Camera.main.transform.forward * (throwForce * forceMultiplier), ForceMode.Impulse);
+        throwable.GetComponent<Throwable>().hasBeenThrow = true;
+
+        grenades--;
+        HUDManager.Instance.UpdateThrowables(Throwable.ThrowableType.Grenade);
+
     }
 
     public void PickupWeapon(GameObject pickedupWeapon)
@@ -153,4 +198,24 @@ public class WeaponManager : MonoBehaviour
                 return 0;
         }
     }
+
+    #region || ---- Throwables ---- || 
+    public void PickupThrowable(Throwable throwable)
+    {
+        switch (throwable.throwableType)
+        {
+            case Throwable.ThrowableType.Grenade:
+                PickupGrenade();
+                break;
+        }
+    }
+
+    private void PickupGrenade()
+    {
+        grenades++;
+
+        HUDManager.Instance.UpdateThrowables(Throwable.ThrowableType.Grenade);
+    }
+    #endregion
+
 }
