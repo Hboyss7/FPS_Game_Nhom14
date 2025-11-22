@@ -47,10 +47,10 @@ public class HUDManager : MonoBehaviour
             //totalAmmoUI.text = $"{activeWeapon.magazineSize / activeWeapon.bulletsPerBurst}";
             totalAmmoUI.text = $"{WeaponManager.Instance.CheckAmmoLeftFor(activeWeapon.thisWeaponModel)}";
 
-            //Weapon.WeaponModel model = activeWeapon.thisWeaponModel;
-            //ammoTypeUI.sprite = GetAmmoSprite(model);
+            Weapon.WeaponModel model = activeWeapon.thisWeaponModel;
+            ammoTypeUI.sprite = GetAmmoSprite(model);
 
-            //activeWeaponUI.sprite = GetWeaponSprite(model);
+            activeWeaponUI.sprite = GetWeaponSprite(model);
 
             if (unActiveWeapon)
             {
@@ -74,9 +74,9 @@ public class HUDManager : MonoBehaviour
         switch (model)
         {
             case Weapon.WeaponModel.Pistol1911:
-                return Instantiate(Resources.Load<GameObject>("Pistol1911_Weapon")).GetComponent<SpriteRenderer>().sprite;
+                return Resources.Load<GameObject>("Pistol1911_Weapon").GetComponent<SpriteRenderer>().sprite;
             case Weapon.WeaponModel.M16:
-                return Instantiate(Resources.Load<GameObject>("M16_Weapon")).GetComponent<SpriteRenderer>().sprite;
+                return Resources.Load<GameObject>("M16_Weapon").GetComponent<SpriteRenderer>().sprite;
             default:
                 return null;
         }
@@ -87,9 +87,9 @@ public class HUDManager : MonoBehaviour
         switch (model)
         {
             case Weapon.WeaponModel.Pistol1911:
-                return Instantiate(Resources.Load<GameObject>("Pistol_Ammo")).GetComponent<SpriteRenderer>().sprite;
+                return Resources.Load<GameObject>("Pistol_Ammo").GetComponent<SpriteRenderer>().sprite;
             case Weapon.WeaponModel.M16:
-                return Instantiate(Resources.Load<GameObject>("Rifle_Ammo")).GetComponent<SpriteRenderer>().sprite;
+                return Resources.Load<GameObject>("Rifle_Ammo").GetComponent<SpriteRenderer>().sprite;
             default:
                 return null;
         }
